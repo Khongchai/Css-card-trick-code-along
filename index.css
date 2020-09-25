@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+body
+{
+    padding: 0;
+    margin: 0;
+    background-color: #17141d;
+    color: white;
+    font-family: 'DM Mono', monospace;
+}
+
+.card-list
+{
+    display: flex;
+    padding: 3rem;
+    overflow-x: scroll;
+
+    justify-content: center;
+
+}
+
+.card
+{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 350px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0rem 3rem  #000;
+    transition: .4s;
+}
+.card:hover
+{
+    transform: translateY(-1rem);
+}
+
+.card:hover~.card
+{
+    transform: translateX(130px);
+}
+.card:not(:first-child)
+{
+    margin-left: -130px;
+}
+
+.card-list::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+
+}
+
+.card-list::-webkit-scrollbar-thumb{
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0,0,0,.25);
+
+}
+
+.card-list::-webkit-scrollbar-track
+{
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+.card-author
+{
+    position: relative;
+    display: grid;
+    /*make left grid 75px and the rest 1 fractional unit to make responsive */
+    grid-template-columns: 90px 1fr;
+    align-items: center;
+    column-gap: 0.2cm;
+    margin-top: auto;
+}
+
+.author-avatar img
+{
+    display: block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin: 16px 10px;
+    margin-right: 16px;
+    border-radius: 50%;
+    display: block;
+    
+}
+.header
+{
+    font-size: 2rem;
+    text-align: center;
+}
+
+.half-circle
+{
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    width: 79px;
+    height: 48px;
+    fill: none;
+    stroke: #ff8a00;
+    stroke-width: 7;
+    stroke-linecap: round;
+    
+}
+
+.author-name-prefix
+{
+    font-style: normal;
+    font-weight: 700;
+    color: #7a7a8c;
+}
+
+.card-header h2:hover
+{
+    cursor: pointer;
+    background: linear-gradient(90deg, #a10dce, #248ee5);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+
